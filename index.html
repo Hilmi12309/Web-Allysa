@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezatnya Makanan Khas Manado</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="decor decor-1"></div>
+    <div class="decor decor-2"></div>
+    <div class="decor decor-3"></div>
+    <div class="decor decor-4"></div>
+    <div class="decor decor-5"></div>
+    <div class="decor decor-6"></div>
+    <div class="decor decor-7"></div>
+    <div class="decor decor-8"></div>
+ 
+    <header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <h1>Lezatnya Makanan Khas Manado</h1>
+                <p>Cihuyyy</p>
+            </div>
+            
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="html/profile.html">Profile</a></li>
+                <li><a href="html/kontak.html">Kontak</a></li>
+                <li>
+        <a href="html/login.html" class="auth-btn">
+        <span class="auth-text">Daftar/Login</span>
+    <span class="auth-icon"><i class="fas fa-arrow-right"></i></span>
+  </a>
+</li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <br>
+
+    <!-- Slider -->
+    <section class="slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="images/tinutuan.jpg" alt="Makanan Manado 1">
+                <div class="caption">Tinutuan - Bubur Manado</div>
+            </div>
+            <div class="slide">
+                <img src="images/cakalang.jpg" alt="Makanan Manado 2">
+                <div class="caption">Cakalang Fufu - Ikan Asap Khas</div>
+            </div>
+            <div class="slide">
+                <img src="images/panada.jpg" alt="Makanan Manado 3">
+                <div class="caption">Panada Cakalang - Kue Tradisional</div>
+            </div>
+            
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            
+            <div class="dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daftar Makanan -->
+    <section class="food-menu">
+        <div class="container">
+            <h2>Daftar Makanan Khas Manado</h2><br>
+            <div class="food-grid">
+                <div class="food-item">
+                    <img src="images/tinutuan.jpg" alt="Tinutuan">
+                    <a href="https://www.tribunnewswiki.com/2019/07/15/tinutuan">
+                    <h3>Tinutuan (Bubur Manado)</h3>
+                    </a>
+                    <p>Bubur khas Manado yang terbuat dari campuran sayuran dan jagung dengan rasa gurih alami.</p>
+                    <span class="price">Rp 25.000</span>
+                     <a href="html/pesanan.html" target="_blank" class="order-btn">Pesan Sekarang</a>
+                </div>
+                
+                <div class="food-item">
+                    <img src="images/cakalang.jpg" alt="Cakalang Fufu">
+                    <a href="https://www.tribunnewswiki.com/2020/02/23/cakalang-fufu">
+                    <h3>Cakalang Fufu</h3>
+                    </a>
+                    <p>Ikan cakalang yang diasap dengan teknik tradisional, memiliki aroma khas dan tekstur yang unik.</p>
+                    <span class="price">Rp 75.000</span>
+                     <a href="html/pesanan.html" target="_blank" class="order-btn">Pesan Sekarang</a>
+                </div>
+                
+                <div class="food-item">
+                    <img src="images/ayam.jpg" alt="Ayam Woku">
+                    <a href="https://www.tribunnewswiki.com/2020/04/24/ayam-woku">
+                    <h3>Ayam Woku</h3></a>
+                    <p>Ayam Woku adalah salah satu hidangan ayam khas dari Manado, Sulawesi Utara, yang terkenal dengan cita rasa pedas, gurih, dan aromatiknya yang sangat kuat.</p>
+                    <span class="price">Rp 40.000</span>
+                     <a href="html/pesanan.html" target="_blank" class="order-btn">Pesan Sekarang</a>
+                </div>
+                
+                <div class="food-item">
+                    <img src="images/paniki.jpg" alt="Paniki">
+                    <a href="https://id.m.wikipedia.org/wiki/Paniki_(makanan)">
+                    <h3>Paniki</h3></a>
+                    <p>Hidangan khas Manado, Sulawesi Utara, yang dibuat dari daging kelelawar.</p>
+                    <span class="price">Rp 71.000</span>
+                    <a href="html/pesanan.html" target="_blank" class="order-btn">Pesan Sekarang</a>
+                </div>
+                
+                <div class="food-item">
+                    <img src="images/gohu.jpg" alt="Gohu pepaya"><a href="https://infonawacita.com/gohu-pepaya-asinan-khas-dari-manado/">
+                    <h3>Gohu Pepaya</h3>
+                    </a>
+                    <p>Asinan Gohu pepaya khas Manado ini sangat identik dengan cita rasa asam, manis, serta pedas.</p>
+                    <span class="price">Rp 14.000</span>
+                     <a href="html/pesanan.html" target="_blank" class="order-btn">Pesan Sekarang</a>
+                </div>
+                
+                <div class="food-item">
+                    <img src="images/panada.jpg" alt="Panada">
+                    <a href="https://tribunmedanwiki.tribunnews.com/2020/12/02/panada-kuliner-khas-manado"><h3>Panada Cakalang</h3></a>
+                    <p>roti goreng atau kue pastel yang diisi dengan pampis, yaitu campuran parutan pepaya muda dan ikan cakalang yang dimasak pedas.</p>
+                    <span class="price">Rp 18.000</span>
+                     <a href="html/pesanan.html" target="_blank" class="order-btn">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Tentang Kami</h3>
+                    <p>Website ini dibuat untuk memperkenalkan kelezatan makanan khas Manado kepada dunia. Manado bukan hanya tentang keindahan alamnya, tapi juga kekayaan kuliner yang menggoda.</p>
+                </div>
+                
+                <div class="footer-section links">
+                    <h3>Tautan Cepat</h3>
+                    <div class="social-links">
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="html/profile.html">Profile</a></li>
+                        <li><a href="html/kontak.html">Kontak</a></li>
+                        <li><a href="html/daftar.html">Daftar</a></li>
+                    </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-section social">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@0hmmmzz0?_t=ZS-8wyP4L1iZey&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </footer>
+    <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+    <script src="script/main.js"></script>
+</body>
+</html>
