@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Makanan - Lezatnya Makanan Khas Manado</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/pesanan.css">
+    
+</head>
+<body>
+    <div class="decor decor-1"></div>
+    <div class="decor decor-2"></div>
+    <div class="decor decor-3"></div>
+    <div class="decor decor-4"></div>
+    <div class="decor decor-5"></div>
+    <div class="decor decor-6"></div>
+    <div class="decor decor-7"></div>
+    <div class="decor decor-8"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Lezatnya Makanan Khas Manado</h1>
+                    <p>Cihuyyy</p>
+                </div>
+                
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Beranda</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li>
+                        <a href="login.html" class="auth-btn">
+                            <span class="auth-text">Daftar/Login</span>
+                            <span class="auth-icon"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main class="container">
+        <div class="order-container">
+            <div class="order-header">
+                <h1>Form Pemesanan</h1>
+                <p>Isi data diri Anda dan pilih makanan yang ingin dipesan</p>
+                <h1 style="color: red; font-size: 10px;">TIDAK BISA SUBMIT PESANAN </h1>
+            </div>
+            
+            <form id="orderForm" class="order-form">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Alamat Pengiriman</label>
+                    <textarea id="address" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Jumlah Pesanan</label>
+                    <input type="number" id="quantity" min="1" value="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Pilih Makanan:</label>
+                    <div class="food-options">
+                       
+                        <div class="food-option">
+                            <input type="checkbox" id="food1" name="food" value="Tinutuan (Bubur Manado)" data-spicy="false">
+                            <div class="food-info">
+                                <h3>Tinutuan (Bubur Manado)</h3>
+                                <p>Bubur khas Manado dengan campuran sayuran dan jagung</p>
+                            </div>
+                            <div class="food-price">Rp 25.000</div>
+                        </div>
+                    
+                        <div class="food-option">
+                            <input type="checkbox" id="food2" name="food" value="Cakalang Fufu" data-spicy="false">
+                            <div class="food-info">
+                                <h3>Cakalang Fufu</h3>
+                                <p>Ikan cakalang yang diasap dengan teknik tradisional</p>
+                            </div>
+                            <div class="food-price">Rp 75.000</div>
+                        </div>
+                        
+                        <div class="food-option">
+                            <input type="checkbox" id="food3" name="food" value="Ayam Woku" data-spicy="true">
+                            <div class="food-info">
+                                <h3>Ayam Woku</h3>
+                                <p>Ayam dengan bumbu pedas khas Manado</p>
+                            </div>
+                            <div class="food-price">Rp 40.000</div>
+                            <div class="spicy-level" id="spicy-level-3">
+                                <label>Level Kepedasan:</label>
+                                <div class="spicy-options">
+                                    <div class="spicy-option">
+                                        <input type="radio" id="mild3" name="spicy-level3" value="Mild">
+                                        <label for="mild3">Mild</label>
+                                    </div>
+                                    <div class="spicy-option">
+                                        <input type="radio" id="medium3" name="spicy-level3" value="Medium">
+                                        <label for="medium3">Medium</label>
+                                    </div>
+                                    <div class="spicy-option">
+                                        <input type="radio" id="hot3" name="spicy-level3" value="Hot">
+                                        <label for="hot3">Hot</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="food-option">
+                            <input type="checkbox" id="food4" name="food" value="Paniki" data-spicy="false">
+                            <div class="food-info">
+                                <h3>Paniki</h3>
+                                <p>Hidangan khas Manado dari daging kelelawar</p>
+                            </div>
+                            <div class="food-price">Rp 71.000</div>
+                        </div>
+                        
+                        <div class="food-option">
+                            <input type="checkbox" id="food5" name="food" value="Gohu Pepaya" data-spicy="true">
+                            <div class="food-info">
+                                <h3>Gohu Pepaya</h3>
+                                <p>Asinan Gohu pepaya khas Manado ini sangat identik dengan cita rasa asam, manis, serta pedas</p>
+                            </div>
+                            <div class="food-price">Rp 14.000</div>
+                            <div class="spicy-level" id="spicy-level-5">
+                                <label>Level Kepedasan:</label>
+                                <div class="spicy-options">
+                                    <div class="spicy-option">
+                                        <input type="radio" id="mild5" name="spicy-level5" value="Mild">
+                                        <label for="mild5">Mild</label>
+                                    </div>
+                                    <div class="spicy-option">
+                                        <input type="radio" id="medium5" name="spicy-level5" value="Medium">
+                                        <label for="medium5">Medium</label>
+                                    </div>
+                                    <div class="spicy-option">
+                                        <input type="radio" id="hot5" name="spicy-level5" value="Hot">
+                                        <label for="hot5">Hot</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="food-option">
+                            <input type="checkbox" id="food6" name="food" value="Panada Cakalang" data-spicy="true">
+                            <div class="food-info">
+                                <h3>Panada Cakalang</h3>
+                                <p>Roti goreng diisi dengan pampis cakalang pedas</p>
+                            </div>
+                            <div class="food-price">Rp 18.000</div>
+                            <div class="spicy-level" id="spicy-level-6">
+                                <label>Level Kepedasan:</label>
+                                <div class="spicy-options">
+                                    <div class="spicy-option">
+                                        <input type="radio" id="mild6" name="spicy-level6" value="Mild">
+                                        <label for="mild6">Mild</label>
+                                    </div>
+                                    <div class="spicy-option">
+                                        <input type="radio" id="medium6" name="spicy-level6" value="Medium">
+                                        <label for="medium6">Medium</label>
+                                    </div>
+                                    <div class="spicy-option">
+                                        <input type="radio" id="hot6" name="spicy-level6" value="Hot">
+                                        <label for="hot6">Hot</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Catatan Tambahan</label>
+                    <textarea id="notes" rows="3" placeholder="Contoh: Tidak pakai bawang, pedas level medium, dll."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span id="submit-text">Pesan Sekarang</span>
+                    <span id="submit-loader" style="display:none;">
+                        <i class="fas fa-spinner fa-spin"></i> Memproses...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Pesanan Berhasil!</h2>
+            <p>Terima kasih telah memesan makanan khas Manado. Kami akan segera memproses pesanan Anda.</p>
+            <button class="modal-btn" id="confirmBtn">Kembali ke Beranda</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Tentang Kami</h3>
+                    <p>Website ini dibuat untuk memperkenalkan kelezatan makanan khas Manado kepada dunia. Manado bukan hanya tentang keindahan alamnya, tapi juga kekayaan kuliner yang menggoda.</p>
+                </div>
+                
+                <div class="footer-section links">
+                    <h3>Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Beranda</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                        <li><a href="form.html">Daftar/Login</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section social">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@0hmmmzz0?_t=ZS-8wyP4L1iZey&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <script src="../script/main.js"></script>
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form submitted - Main handler');
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const checkedFoods = document.querySelectorAll('input[name="food"]:checked');
+          
+            if (!name || !email || !phone || !address) {
+                alert('Harap lengkapi semua data diri');
+                return;
+            }
+            
+            if (checkedFoods.length === 0) {
+                alert('Silakan pilih minimal 1 makanan');
+                return;
+            }
+            
+            let valid = true;
+            checkedFoods.forEach(food => {
+                if (food.dataset.spicy === "true") {
+                    const spicyLevelId = 'spicy-level-' + food.id.slice(4);
+                    const spicySelected = document.querySelector(`#${spicyLevelId} input[type="radio"]:checked`);
+                    if (!spicySelected) {
+                        alert(`Harap pilih level kepedasan untuk ${food.value}`);
+                        valid = false;
+                    }
+                }
+            });
+            
+            if (!valid) return;
+            
+            
+            document.getElementById('submit-text').style.display = 'none';
+            document.getElementById('submit-loader').style.display = 'inline';
+            document.getElementById('submitBtn').disabled = true;
+            
+            setTimeout(() => {
+                let orderSummary = '<ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem;">';
+                checkedFoods.forEach(food => {
+                    orderSummary += `<li>${food.value}`;
+                    
+                    if (food.dataset.spicy === "true") {
+                        const spicyLevel = document.querySelector(`input[name="spicy-level${food.id.slice(4)}"]:checked`);
+                        if (spicyLevel) {
+                            orderSummary += ` (Level: ${spicyLevel.value})`;
+                        }
+                    }
+                    
+                    orderSummary += `</li>`;
+                });
+                orderSummary += '</ul>';
+                
+                document.querySelector('.modal p').innerHTML = 
+                    `Terima kasih telah memesan makanan khas Manado. Pesanan Anda: ${orderSummary} Kami akan segera memproses pesanan Anda.`;
+                
+                document.getElementById('confirmationModal').classList.add('active');
+                
+                document.getElementById('submit-text').style.display = 'inline';
+                document.getElementById('submit-loader').style.display = 'none';
+                document.getElementById('submitBtn').disabled = false;
+            }, 1500);
+        });
+
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            window.location.href = '../index.html';
+        });
+
+        document.querySelectorAll('input[name="food"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const spicyLevelId = 'spicy-level-' + this.id.slice(4);
+                const spicyLevelElement = document.getElementById(spicyLevelId);
+                
+                if (this.dataset.spicy === "true") {
+                    if (this.checked) {
+                        spicyLevelElement.style.display = 'block';
+                    } else {
+                        spicyLevelElement.style.display = 'none';
+                        document.querySelectorAll(`input[name="spicy-level${this.id.slice(4)}"]`).forEach(radio => {
+                            radio.checked = false;
+                        });
+                    }
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+    </script>
+</body>
+</html>

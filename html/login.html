@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-card {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.44);
+        }
+        .social-btn {
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .modal {
+            transition: all 0.3s ease;
+        }
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal-visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-white via-gray-200 to-black min-h-screen flex items-center justify-center p-4">
+    <!-- Main Login Card -->
+    <div class="login-card rounded-2xl shadow-2xl p-8 w-full max-w-md border border-white border-opacity-20">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-white mb-2">Welcome Back</h1>
+            <p class="text-white text-opacity-70">Sign in to continue to your account</p>
+        </div>
+        
+        <form class="space-y-6" id="loginForm">
+            <div>
+                <label for="email" class="block text-sm font-medium text-white mb-1">Email Address</label>
+                <div class="relative">
+                    <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-40 focus:outline-none focus:ring-2 focus:ring-purple-300">
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i class="fas fa-envelope text-white text-opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <label for="password" class="block text-sm font-medium text-white mb-1">Password</label>
+                <div class="relative">
+                    <input type="password" id="password" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-40 focus:outline-none focus:ring-2 focus:ring-purple-300">
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i class="fas fa-lock text-white text-opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-purple-500 focus:ring-purple-400 border-gray-300 rounded">
+                    <label for="remember-me" class="ml-2 block text-sm text-white">Remember me</label>
+                </div>
+                
+                <div class="text-sm">
+                    <a href="#" class="font-medium text-purple-300 hover:text-purple-200">Forgot password?</a>
+                </div>
+            </div>
+            
+            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition">
+                Sign In
+            </button>
+        </form>
+        
+        <div class="mt-6">
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-white border-opacity-30"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-transparent text-white text-opacity-70">Or continue with</span>
+                </div>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-2 gap-3">
+                <button onclick="showSocialLogin('google')" class="social-btn w-full inline-flex justify-center py-2 px-4 rounded-lg shadow-sm text-sm font-medium text-white bg-white bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50 border border-white border-opacity-20">
+                    <i class="fab fa-google text-red-400 mr-2"></i> Google
+                </button>
+                
+                <button onclick="showSocialLogin('tiktok')" class="social-btn w-full inline-flex justify-center py-2 px-4 rounded-lg shadow-sm text-sm font-medium text-white bg-white bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50 border border-white border-opacity-20">
+                    <i class="fab fa-tiktok text-white mr-2"></i> TikTok
+                </button>
+                
+                <button onclick="showSocialLogin('youtube')" class="social-btn w-full inline-flex justify-center py-2 px-4 rounded-lg shadow-sm text-sm font-medium text-white bg-white bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50 border border-white border-opacity-20">
+                    <i class="fab fa-youtube text-red-500 mr-2"></i> YouTube
+                </button>
+                
+                <button onclick="showSocialLogin('email')" class="social-btn w-full inline-flex justify-center py-2 px-4 rounded-lg shadow-sm text-sm font-medium text-white bg-white bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50 border border-white border-opacity-20">
+                    <i class="fas fa-envelope text-blue-300 mr-2"></i> Email
+                </button>
+                
+                <button onclick="showSocialLogin('phone')" class="social-btn w-full col-span-2 inline-flex justify-center py-2 px-4 rounded-lg shadow-sm text-sm font-medium text-white bg-white bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-opacity-50 border border-white border-opacity-20">
+                    <i class="fas fa-phone text-green-400 mr-2"></i> Phone Number
+                </button>
+            </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+            <p class="text-white text-opacity-70 text-sm">
+                Don't have an account? 
+                <a href="#" class="text-purple-300 hover:text-purple-200 font-medium">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Social Login Modals -->
+    <div id="googleModal" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
+        <div class="bg-gray-800 rounded-xl p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-white">Login with Google</h3>
+                <button onclick="hideModal('googleModal')" class="text-white hover:text-gray-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mb-6">
+                <div class="bg-white rounded-full p-4">
+                    <i class="fab fa-google text-4xl text-red-500"></i>
+                </div>
+            </div>
+            <div class="mb-6">
+                <input type="email" placeholder="Enter your Google email" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400">
+            </div>
+            <div class="mb-4">
+                <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400">
+            </div>
+            <button onclick="showSuccessNotification('Google')" class="w-full py-3 px-4 rounded-lg text-white bg-red-500 hover:bg-red-600 transition">
+                Continue with Google
+            </button>
+        </div>
+    </div>
+
+    <div id="tiktokModal" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
+        <div class="bg-gray-800 rounded-xl p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-white">Login with TikTok</h3>
+                <button onclick="hideModal('tiktokModal')" class="text-white hover:text-gray-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mb-6">
+                <div class="bg-black rounded-full p-4">
+                    <i class="fab fa-tiktok text-4xl text-white"></i>
+                </div>
+            </div>
+            <div class="mb-6">
+                <input type="text" placeholder="Enter your TikTok username" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-400">
+            </div>
+            <div class="mb-4">
+                <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-400">
+            </div>
+            <button onclick="showSuccessNotification('TikTok')" class="w-full py-3 px-4 rounded-lg text-white bg-black hover:bg-gray-900 transition">
+                Continue with TikTok
+            </button>
+        </div>
+    </div>
+
+    <div id="youtubeModal" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
+        <div class="bg-gray-800 rounded-xl p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-white">Login with YouTube</h3>
+                <button onclick="hideModal('youtubeModal')" class="text-white hover:text-gray-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mb-6">
+                <div class="bg-white rounded-full p-4">
+                    <i class="fab fa-youtube text-4xl text-red-500"></i>
+                </div>
+            </div>
+            <div class="mb-6">
+                <input type="email" placeholder="Enter your YouTube email" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400">
+            </div>
+            <div class="mb-4">
+                <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400">
+            </div>
+            <button onclick="showSuccessNotification('YouTube')" class="w-full py-3 px-4 rounded-lg text-white bg-red-600 hover:bg-red-700 transition">
+                Continue with YouTube
+            </button>
+        </div>
+    </div>
+
+    <div id="emailModal" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
+        <div class="bg-gray-800 rounded-xl p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-white">Login with Email</h3>
+                <button onclick="hideModal('emailModal')" class="text-white hover:text-gray-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mb-6">
+                <div class="bg-blue-500 rounded-full p-4">
+                    <i class="fas fa-envelope text-4xl text-white"></i>
+                </div>
+            </div>
+            <div class="mb-6">
+                <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div class="mb-4">
+                <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <button onclick="showSuccessNotification('Email')" class="w-full py-3 px-4 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition">
+                Continue with Email
+            </button>
+        </div>
+    </div>
+
+   <div id="phoneModal" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
+  <div class="bg-gray-800 rounded-xl p-6 w-full max-w-md text-white">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-bold">Login with Phone</h3>
+      <button onclick="hideModal('phoneModal')" class="hover:text-gray-300">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Phone input -->
+    <div class="mb-4">
+      <div class="flex items-center bg-gray-700 rounded-lg border border-gray-600 overflow-hidden">
+        <div class="px-3 py-3 bg-gray-600 text-white text-sm">+62</div>
+        <input type="tel" placeholder="Phone number" id="phoneNumberInput" class="flex-grow px-4 py-3 bg-transparent text-white placeholder-gray-400 focus:outline-none">
+      </div>
+    </div>
+
+    <!-- OTP input (initially hidden) -->
+    <div id="otpInputContainer" class="mb-4 hidden">
+      <input type="text" id="otpInput" readonly class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none" placeholder="Your OTP Code">
+    </div>
+
+    <button onclick="sendOtp()" class="w-full py-3 px-4 rounded-lg text-white bg-green-500 hover:bg-green-600 transition">
+      Get OTP Code
+    </button>
+  </div>
+</div>
+
+    <!-- Success Notification -->
+    <div id="successNotification" class="modal modal-hidden fixed bottom-8 right-8 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out translate-y-10 opacity-0 z-50">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle text-xl mr-3"></i>
+            <div>
+                <p class="font-semibold">Login Successful!</p>
+                <p class="text-sm">You are being redirected...</p>
+            </div>
+            <button onclick="hideSuccessNotification()" class="ml-4 text-white hover:text-green-100">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+    
+        function sendOtp() {
+    const otp = Math.floor(1000 + Math.random() * 900000);
+    const otpInput = document.getElementById("otpInput");
+    const otpContainer = document.getElementById("otpInputContainer");
+    
+    otpInput.value = "";
+    otpContainer.classList.remove("hidden");
+    
+    const delay = Math.floor(Math.random() * 1000) + 3000;
+    
+    setTimeout(() => {
+        otpInput.value = otp;
+        console.log("OTP sent:", otp);
+        
+        showSuccessNotification('Phone');
+        
+        setTimeout(() => {
+            window.location.href = '/index.html';
+            window.close();
+        }, 1000);
+        
+    }, delay);
+}
+        function showSocialLogin(provider) {
+            document.getElementById(provider + 'Modal').classList.remove('modal-hidden');
+            document.getElementById(provider + 'Modal').classList.add('modal-visible');
+            
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideModal(modalId) {
+            document.getElementById(modalId).classList.remove('modal-visible');
+            document.getElementById(modalId).classList.add('modal-hidden');
+            
+            document.body.style.overflow = '';
+        }
+        
+        function showSuccessNotification(provider) {
+            hideModal(provider.toLowerCase() + 'Modal');
+            
+            const notification = document.getElementById('successNotification');
+            notification.classList.remove('modal-hidden');
+            notification.classList.remove('translate-y-10', 'opacity-0');
+            notification.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                window.location.href = '/index.html';
+            }, 2000);
+        }
+        
+        function hideSuccessNotification() {
+            const notification = document.getElementById('successNotification');
+            notification.classList.add('translate-y-10', 'opacity-0');
+            
+            setTimeout(() => {
+                notification.classList.add('modal-hidden');
+            }, 300);
+        }
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showSuccessNotification('Email');
+        });
+    </script>
+</body>
+</html>
