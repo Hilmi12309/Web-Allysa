@@ -1,0 +1,401 @@
+  .order-container {
+            max-width: 800px;
+            margin: 5.5rem auto 3rem;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        [data-theme="dark"] .order-container {
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .order-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .order-header h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .order-header p {
+            color: var(--text);
+        }
+
+        .order-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .order-form input[type="text"],
+        .order-form input[type="email"],
+        .order-form input[type="tel"],
+        .order-form input[type="number"],
+        .order-form textarea,
+        .order-form select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        [data-theme="dark"] .order-form input,
+        [data-theme="dark"] .order-form select,
+        [data-theme="dark"] .order-form textarea {
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .order-form input:focus,
+        .order-form select:focus,
+        .order-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+        }
+
+        .food-options {
+            margin: 1.5rem 0;
+        }
+
+        .food-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            background-color: var(--bg);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        [data-theme="dark"] .food-option {
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .food-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .food-option input[type="checkbox"] {
+            margin-right: 1rem;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .food-option input[type="checkbox"]:checked ~ .food-info h3 {
+            color: var(--secondary);
+        }
+
+        .food-option input[type="checkbox"]:checked ~ .food-price {
+            color: var(--secondary);
+        }
+
+        .food-info {
+            flex-grow: 1;
+        }
+
+        .food-info h3 {
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
+
+        .food-info p {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .food-price {
+            font-weight: bold;
+            color: var(--primary);
+            margin-left: 1rem;
+        }
+
+        .spicy-level {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        [data-theme="dark"] .spicy-level {
+            border-top: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .spicy-options {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .spicy-option {
+            flex: 1;
+        }
+
+        .spicy-option input[type="radio"] {
+            display: none;
+        }
+
+        .spicy-option label {
+            display: block;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 50px;
+            background-color: var(--bg);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] .spicy-option label {
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .spicy-option input[type="radio"]:checked + label {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .submit-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal h2 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .modal p {
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        .modal-btn {
+            padding: 0.8rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Decorations */
+        .decor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+            animation: float 15s infinite ease-in-out;
+            filter: blur(1px);
+        }
+
+        .decor-1 {
+            top: 10%;
+            left: 5%;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .decor-2 {
+            top: 70%;
+            left: 80%;
+            width: 70px;
+            height: 70px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            animation-delay: 2s;
+        }
+
+        .decor-3 {
+            top: 30%;
+            left: 90%;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation-delay: 4s;
+        }
+
+        .decor-4 {
+            top: 80%;
+            left: 10%;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            animation-delay: 6s;
+        }
+
+        .decor-5 {
+            top: 20%;
+            left: 20%;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation-delay: 8s;
+        }
+
+        .decor-6 {
+            top: 60%;
+            left: 60%;
+            width: 25px;
+            height: 25px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            animation-delay: 10s;
+        }
+
+        .decor-7 {
+            top: 40%;
+            left: 30%;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation-delay: 12s;
+        }
+
+        .decor-8 {
+            top: 90%;
+            left: 70%;
+            width: 35px;
+            height: 35px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            animation-delay: 14s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        [data-theme="dark"] .decor {
+            opacity: 0.1;
+        }
+
+        @media (max-width: 768px) {
+            .order-container {
+                margin-top: 4.5rem;
+                padding: 1.5rem;
+            }
+            
+            .food-option {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .food-price {
+                margin: 0.5rem 0 0 0;
+                align-self: flex-end;
+            }
+            
+            .spicy-options {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
